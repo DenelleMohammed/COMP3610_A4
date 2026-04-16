@@ -220,3 +220,6 @@ data/
 *.jsonl
 
 *.db
+
+# macOS
+*.DS_Store
