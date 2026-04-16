@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.git/
+.gitignore
+.pytest_cache/
+.ipynb_checkpoints/
+*.ipynb
+data/
+*.parquet
+mlruns/
+.env
+README.md
+.venv/
+venv/

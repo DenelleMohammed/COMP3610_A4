@@ -1,0 +1,19 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8001:8000"
+    environment:
+      - MODEL_PATH=/app/models/taxi_tip_model.pkl
+      - SCALER_PATH=/app/models/scaler.pkl
+      - FEATURE_COLUMNS_PATH=/app/models/feature_columns.json
+      - MODEL_METADATA_PATH=/app/models/model_metadata.json
+      - MLFLOW_TRACKING_URI=http://mlflow:5000
+    depends_on:
+      - mlflow
+
+  mlflow:
+    image: ghcr.io/mlflow/mlflow:v2.12.1
+    ports:
+      - "5001:5000"
+    command: mlflow server --host 0.0.0.0 --port 5000
